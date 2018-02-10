@@ -2,12 +2,13 @@
 
 var carouselList = $("#carousel ul");
 var li = $('li');
+var slideLeft = $("#leftChevron");
+var slideRight = $("#rightChevron");
 
-$(function(){
+$(function() {
 	//this code will execute after the DOM is loaded
 	setTimeout(changeSlide, 3000); //after 3 seconds will change the slide once
 	setInterval(changeSlide, 3000); //every 3 seconds, it performs a function to change the slide
-
 });
 
 function changeSlide() {
@@ -20,3 +21,20 @@ function moveFirstSlide() {
 	lastItem.after(firstItem);
 	carouselList.css({marginLeft:0});
 }
+
+function moveLastSlide() {
+	var firstItem = carouselList.find("li:first");
+	var lastItem = carouselList.find("li:last");
+	firstItem.after(lastItem);
+	carouselList.css({marginLeft:0});
+}
+
+slideLeft.on('click', function() {
+	console.log('leftChevron');
+	carouselList.animate({'marginLeft':-400}, 500, moveFirstSlide);
+});
+
+slideRight.on('click', function() {
+	console.log('rightChevron');
+	carouselList.animate({'marginLeft': 400}, 500, moveLastSlide);
+});

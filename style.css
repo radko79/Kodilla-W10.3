@@ -27,3 +27,23 @@ li {
 	list-style: none;
 	float: left;
 }
+
+#carousel .chevrons {
+	position: absolute;
+	top: 45%;
+	left: 8%;
+}
+
+#carousel .chevrons #leftChevron,
+#carousel .chevrons #rightChevron {
+	color: white;
+	mix-blend-mode: difference;
+}
+
+#carousel .chevrons #leftChevron {
+	margin-right: 125px;
+}
+
+#carousel .chevrons #rightChevron {
+	margin-left: 125px;
+}*/
